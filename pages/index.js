@@ -22,9 +22,9 @@ export default function Home({ allPostsData }) {
         <title>{siteTitle}</title>
       </Head>
       <section className={utilStyles.headingMd}>
-        <p>🚀👩‍🚀</p>
+        <p>👩‍🚀 Ready to blast off? 🚀</p>
         <p>
-          Ready to blast off?
+            This blog is connected w/ Airtable
         </p>
       </section>
 
