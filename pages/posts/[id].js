@@ -1,11 +1,12 @@
 import Head from 'next/head'
 import Layout from '../../components/layout'
 import Date from '../../components/date'
-import { getAllPostIds, getPostData } from '../../lib/posts'
+// import { getAllPostIds, getPostData } from '../../lib/posts'
+import { getAllPostIds, getPostData } from '../../lib/airtable'
 import utilStyles from '../../styles/utils.module.css'
 
 export async function getStaticPaths() {
-    const paths = getAllPostIds()
+    const paths = await getAllPostIds()
     return {
         paths,
         fallback: false
@@ -21,7 +22,7 @@ export async function getStaticProps({ params }) {
     }
 }
 
-export default function Post({ postData }) {
+export default function Post({ params, postData }) {
     return (
         <Layout>
             <Head>
