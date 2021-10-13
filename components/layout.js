@@ -5,7 +5,7 @@ import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
 
 const name = 'Jae Wu Chun'
-export const siteTitle = 'Jae Wu\'s Blog Eh'
+export const siteTitle = 'lp Airtable Blog'
 
 export default function Layout({ children, home }) {
     return (
