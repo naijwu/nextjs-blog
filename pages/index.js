@@ -22,26 +22,28 @@ export default function Home({ allPostsData }) {
         <title>{siteTitle}</title>
       </Head>
       <section className={utilStyles.headingMd}>
-        <p>👩‍🚀 Ready to blast off? 🚀</p>
-        <p>
-            This blog is connected w/ Airtable
+        <p style={{textAlign:'center'}}>
+            Some Google Keep entries with no context.<br />
+            Connected with Airtable!
         </p>
       </section>
 
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Blog</h2>
+      <section className={`${utilStyles.headingMd} ${utilStyles.padding4vh}`}>
 
         <ul className={utilStyles.list}>
-          {allPostsData.map(({ id, date, title }) => (
-            <li className={utilStyles.listItem} key={id}>
-              <Link href={`/posts/${id}`}>
-                <a>{title}</a>
-              </Link>
-              <br />
-              <small className={utilStyles.lightText}>
-                <Date dateString={date} />
-              </small>
-            </li>
+          {allPostsData.map(({ id, date, title, plainTextContent }) => (
+            <Link href={`/posts/${id}`}>
+              <li className={utilStyles.listItem} key={id}>
+                  <a className={utilStyles.listItemTitle}>{title}</a>
+                <br />
+                <small className={utilStyles.lightText}>
+                  <Date dateString={date} />
+                </small>
+                <p className={utilStyles.previewText}>
+                  {plainTextContent}
+                </p>
+              </li>
+            </Link>
           ))}
         </ul>
       </section>
